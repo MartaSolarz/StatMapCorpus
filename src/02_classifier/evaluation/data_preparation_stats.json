@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-02-15T19:10:34.921033",
+  "random_seed": 42,
+  "train": {
+    "size": 3201,
+    "label_distribution": {
+      "YES (1)": 591,
+      "NO (0)": 2610
+    },
+    "class_balance": 0.1846298031865042,
+    "embedding_dim": 768,
+    "columns": [
+      "uid",
+      "label",
+      "l14_img",
+      "url",
+      "score"
+    ],
+    "score_stats": {
+      "mean": 0.4051858794126835,
+      "std": 1.648860772852137,
+      "min": -1.0,
+      "max": 24.0
+    }
+  },
+  "test": {
+    "size": 801,
+    "label_distribution": {
+      "YES (1)": 148,
+      "NO (0)": 653
+    },
+    "class_balance": 0.18476903870162298,
+    "embedding_dim": 768,
+    "columns": [
+      "uid",
+      "label",
+      "l14_img",
+      "url",
+      "score"
+    ],
+    "score_stats": {
+      "mean": 0.38701622971285893,
+      "std": 1.646596857456696,
+      "min": -1.0,
+      "max": 17.5
+    }
+  },
+  "pool": {
+    "size": 196008,
+    "embedding_dim": 768,
+    "columns": [
+      "uid",
+      "l14_img",
+      "url",
+      "score"
+    ],
+    "score_stats": {
+      "mean": 0.13238745357332354,
+      "std": 0.9393169515524912,
+      "min": -1.0,
+      "max": 26.5
+    }
+  }
+}

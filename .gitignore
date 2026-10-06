@@ -1,0 +1,36 @@
+# Working artefacts — never published
+*.db
+*.db-shm
+*.db-wal
+*.log
+.env
+build/
+validation/*/out/
+validation/audit/images/
+validation/audit/maps.js
+validation/audit/maps.json
+validation/audit/questions.js
+image_cache/
+mappool_parts/
+data_samples/
+data_all/
+
+# The deposited data files live at https://doi.org/10.58132/FSJGSP, not here
+*.parquet
+*.npz
+/dataset/
+_not_published/
+/figures/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+.claude/

@@ -1,0 +1,284 @@
+# English translation of the Polish codebook (version 1.0, 2026-08-28) shown to the coders;
+# where the two differ, the Polish original prevails.
+version: "1.0"
+date: "2026-08-28"
+language: en
+translated_from: pl
+mode: gates
+
+placeholders:
+  n_maps: "number of maps assigned to this coder"
+
+ui:
+  app_title: "Map description verification"
+  buttons:
+    login: "Log in"
+    logout: "Log out"
+    start: "Start session"
+    commit: "Commit map"
+    back_field: "← previous field"
+    resume: "current field →"
+    instructions: "Instructions"
+    zoom_in: "Zoom in"
+    zoom_out: "Zoom out"
+    zoom_fit: "Fit to screen"
+    zoom_rotate: "Rotate 90°"
+    zoom_close: "Close"
+  map_alt: "Map under assessment"
+  groups:
+    inclusion:
+      heading: "Preliminary questions"
+    methods:
+      heading: "Presentation methods"
+  login_heading: "Coder login"
+  login_field_login: "Login"
+  login_field_password: "Password"
+  login_failed: "Wrong login or password."
+  session_counter: "map {n}"
+  field_counter: "field {n} of {total}"
+  incomplete: "Resolve every field before you commit the map."
+  save_failed: "Could not save the answer. Check your connection and try again."
+  back_field_tip: "previous field of this map"
+  no_back_tip: "this is the first field"
+  done_heading: "End of session"
+  done_body: >-
+    Session finished, your answers are saved. Thank you!
+  unavailable: >-
+    Coding mode is temporarily unavailable. Please contact the person running
+    the study.
+
+no_default: true
+
+answers:
+  "yes":
+    label: "yes"
+  "no":
+    label: "no"
+  cannot_assess:
+    label: "cannot assess"
+    hint: >-
+      Only when the image makes the judgement impossible: the element is
+      illegible at this resolution, cut off by the frame, or the text is in a
+      script you do not read.
+
+inclusion:
+
+  - code: i2
+    label: I2
+    name: "Is a statistical map"
+    question: "Is this a statistical map?"
+    tooltip: >-
+      Data coming from a census, a register, a survey, a statistical office or
+      another compilation. This question admits statistical maps whose data are
+      quantitative, ordinal or qualitative. If the map has no labels or legend
+      but the way it was made suggests it could be a statistical map, answer
+      `yes`.
+    definition: |
+      Answer "yes" when the map can be regarded as a statistical map.
+
+      Answer "no" for maps that do not present statistical data: topographic
+      and tourist maps, street plans, historical maps without numeric values,
+      transit diagrams, fictional maps, illustrative graphics with no basis in
+      data.
+
+      The criterion is not about the quality of the source, nor about whether a
+      source is given at all - we are asking about the nature of the phenomenon,
+      not about the completeness of the sheet.
+
+  - code: i3
+    label: I3
+    name: "Has administrative or statistical units"
+    question: "Does the map present data for administrative or statistical units?"
+    tooltip: >-
+      Countries, regions, counties, municipalities, states, NUTS units,
+      electoral districts, census tracts, dioceses, geometric shapes - areas
+      with drawn boundaries to which values are attached.
+
+      For an isarithmic map, a heat map, a dot density map or a flow map, answer
+      "yes" also when the units are clearly marked and serve as a frame of
+      reference (for instance as the backdrop for interpolated data).
+    definition: |
+      Answer "yes" when the values refer to areas with drawn boundaries:
+      countries, regions, counties, municipalities, NUTS units, electoral
+      districts, census tracts, city districts, dioceses, rectangles, hexagons
+      and so on. For an isarithmic map, a heat map, a dot density map or a flow
+      map, answer "yes" also when the units are clearly marked and serve as a
+      frame of reference (for instance as the backdrop for interpolated data).
+
+      Answer "no" when the phenomenon is shown without such a division: a
+      continuous surface with no unit boundaries, measurement points, a regular
+      grid unrelated to any administrative division, areas delimited solely by
+      the extent of the phenomenon.
+
+      The boundaries must be recognisable as a frame of reference - it is not
+      enough that the map has lines on it at all.
+
+  - code: i4
+    label: I4
+    name: "Has quantitative data"
+    question: "Does the map present data on a quantitative scale?"
+    tooltip: >-
+      Numbers, including numeric ranges in the legend. Mark "no" for ordinal
+      data without numbers ("low / medium / high") and for qualitative data
+      (the dominant category).
+    definition: |
+      Answer "yes" for numeric data - including data classified into ranges, as
+      long as the legend shows values ("0-10", "under 5%", "over 1000").
+
+      Answer "no" for:
+      • ordinal data without numeric values - "low / medium / high",
+        "poor / good / very good";
+      • qualitative data - the dominant type, membership of a category, a
+        binary outcome with no scale.
+
+      This is a question about the **level of measurement of the data**, not
+      about how they are shown. A map whose numbers are rendered in qualitative
+      colours still has quantitative data.
+
+  - code: has_text
+    label: I5
+    name: "Has text"
+    question: "Does the map contain any text at all?"
+    options: ["yes", "no", "cannot_assess"]
+    tooltip: >-
+      A title, a legend, unit labels, a source, a note - anything written. "No"
+      means a purely graphical map.
+    definition: |
+      Answer "yes" if the sheet carries any text: a title, a legend, unit
+      labels, a caption, source information, a methodological note.
+
+      Answer "no" only for a map entirely devoid of letters and digits. There
+      are very few such maps in the corpus.
+
+methods:
+
+  - code: m1
+    label: M1
+    name: "Choropleth map"
+    question: "Choropleth map"
+    tooltip: >-
+      Reference units filled with a colour corresponding to the value.
+    definition: |
+      Reference units filled with a colour representing the data value. It may
+      be stepped (discrete classes) or continuous (a smooth ramp). The values
+      are typically normalised: densities, rates, percentages.
+
+  - code: m2
+    label: M2
+    name: "Diagram map"
+    question: "Diagram map"
+    tooltip: >-
+      Symbols (circles, squares, pie charts, icons) whose size or structure is
+      proportional to the value.
+    definition: |
+      Point or area symbols - circles, squares, triangles, pie charts, icons -
+      whose size or structure corresponds to the value.
+
+      Includes the proportional variant (size directly proportional), the
+      graduated variant (discrete size classes) and the structural variant (pie
+      charts on the map, multivariate symbols). We do not distinguish the
+      subtypes.
+
+  - code: m3
+    label: M3
+    name: "Isarithmic / isoline map"
+    question: "Isarithmic map"
+    tooltip: >-
+      Lines joining points of equal value, or the fill between them. The zone
+      boundaries are smooth, not administrative.
+    definition: |
+      Isolines - lines joining points of equal value - or a colour fill between
+      them. The boundaries of the colour zones are smooth curves, not the edges
+      of administrative units.
+
+  - code: m4
+    label: M4
+    name: "Dot density map"
+    question: "Dot density map"
+    tooltip: >-
+      Identical dots, each of fixed weight (1 dot = 1000 people). The value is
+      carried by the density, not by the size.
+    definition: |
+      Uniform dots, each representing a fixed number of units of the
+      phenomenon. The size of a dot does not encode the value - the local
+      density of dots does.
+
+  - code: m5
+    label: M5
+    name: "Heat map / continuous surface"
+    question: "Heat map"
+    tooltip: >-
+      A continuous interpolated surface, a smooth colour transition, with no
+      distinct zone boundaries.
+    definition: |
+      A continuous interpolated surface (kernel density estimation, IDW,
+      kriging) showing the local intensity of a phenomenon. The colour
+      transition is smooth, with no discrete isolines and no unit boundaries.
+
+  - code: m6
+    label: M6
+    name: "Cartogram"
+    question: "Cartogram (value-by-area / geometric)"
+    tooltip: >-
+      Unit geometry distorted in proportion to the value - including the
+      circular (Dorling) and hexagonal variants, and regular grids.
+    definition: |
+      Unit geometry distorted in proportion to the data value, or referred to a
+      regular grid.
+      Variants: contiguous (bent boundaries), non-contiguous (units separated),
+      Dorling (each unit as a circle), hexagonal or square (units as identical
+      tiles).
+
+      You recognise it by the fact that **the data are encoded by the geometry,
+      not by the colour** - the shape of an area does not match the real one.
+
+  - code: m7
+    label: M7
+    name: "Flow map"
+    question: "Flow map"
+    tooltip: >-
+      Arrows or directed lines between units; the value is usually in the line
+      thickness.
+    definition: |
+      Arrows or directed lines representing movement between units: migration,
+      trade, transport. The value is usually encoded by the thickness of the
+      line, less often by its length.
+
+attributes:
+
+  - code: legend_is_classed
+    name: "Legend is classed"
+    question: "Assess the treatment of the data"
+    options: ["classed", "continuous", "other"]
+    labels:
+      classed: "stepped (divided into classes)"
+      continuous: "continuous"
+      other: "qualitative / no legend / cannot assess"
+    tooltip: >-
+      You decide from the legend. Stepped - separate patches with ranges.
+      Continuous - a smooth bar labelled at its ends. The third option collects
+      the rest: qualitative data, no legend, an illegible legend. For dot
+      density maps choose the third option ("qualitative / no legend / cannot
+      assess"). For maps with more than one presentation method choose stepped
+      if at least one of the methods presents the data that way.
+    definition: |
+      **Stepped (divided into classes)** - the legend shows distinct
+      quantitative classes: separate patches with ranges, countable steps of
+      colour or size, a visible boundary between neighbouring blocks. A bar
+      divided into blocks with labels at the boundaries counts too.
+
+      **Continuous** - a smooth colour bar with no boundaries between steps,
+      labelled only at the ends or at a few sparse points.
+
+      **Qualitative / no legend / cannot assess** - one answer for three
+      situations in which the stepped/continuous distinction simply does not
+      apply:
+      • qualitative data - distinct, unordered colours for nominal categories,
+        with no increasing scale;
+      • there is no legend at all - no patches, no bar, no values placed on the
+        map to act as a key;
+      • there is a legend, but it is illegible, cut off or obscured and the
+        matter genuinely cannot be decided.
+
+      When you hesitate between stepped and continuous and you can see even one
+      distinct boundary between colour steps - that is **stepped**.

@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the data descriptor and the StatMapCorpus dataset."
+title: "StatMapCorpus: pipeline, release and validation code"
+type: software
+version: "1.0.0"
+repository-code: "https://github.com/MartaSolarz/StatMapCorpus"
+abstract: >-
+  Code that built StatMapCorpus, a corpus of 23,549 English-language statistical maps
+  from MapPool annotated by thematic map type: a multilingual keyword filter, an image
+  classifier trained with active learning, image retrieval, a cascade of vision-language
+  model checks with its prompts, the export of the deposited files, and the analyses of
+  the technical validation.
+authors:
+  - family-names: Solarz
+    given-names: Marta
+    orcid: "https://orcid.org/0009-0001-4134-8500"
+    affiliation: "Faculty of Geography and Regional Studies, University of Warsaw"
+license: MIT
+keywords:
+  - thematic cartography
+  - statistical maps
+  - vision-language models
+  - dataset construction
+references:
+  - type: data
+    title: "StatMapCorpus"
+    doi: "10.58132/FSJGSP"
+    year: 2026
+    publisher:
+      name: "Dane Badawcze UW"
+    authors:
+      - family-names: Solarz
+        given-names: Marta
+        orcid: "https://orcid.org/0009-0001-4134-8500"
+  - type: article
+    title: "MapPool - Bubbling up an extremely large corpus of maps for AI"
+    journal: "Abstracts of the ICA"
+    volume: 8
+    start: 22
+    year: 2024
+    doi: "10.5194/ica-abs-8-22-2024"
+    authors:
+      - family-names: "Schnürer"
+        given-names: Raimund

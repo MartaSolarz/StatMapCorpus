@@ -1,0 +1,3 @@
+PIPELINE_VERSION = "mt_v1"
+
+__all__ = ["PIPELINE_VERSION"]

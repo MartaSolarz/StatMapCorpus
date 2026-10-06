@@ -1,0 +1,28 @@
+{
+  "iteration": 1,
+  "timestamp": "2026-02-15T19:36:49.893889",
+  "n_samples": 1090,
+  "strategy": "entropy",
+  "model": {
+    "name": "SVM_RBF",
+    "use_smote": false,
+    "baseline_f1": 0.8231884057971014,
+    "baseline_recall": 0.9594594594594594,
+    "optimal_threshold": 0.47397001892292034
+  },
+  "stats": {
+    "n_samples_selected": 1090,
+    "uncertainty_mean": 0.9908237597477032,
+    "uncertainty_std": 0.008243908836486482,
+    "pred_proba_mean": 0.486537753528165,
+    "pred_proba_std": 0.054676783752143666,
+    "potential_positive_count": 436,
+    "potential_positive_ratio": 0.4,
+    "stratified": true,
+    "positive_ratio": 0.4,
+    "selected_score_mean": 1.0376146788990825,
+    "pool_score_mean": 0.13238745357332354,
+    "train_score_mean": 0.4051858794126835,
+    "distribution_shift": 0.6324287994863991
+  }
+}
